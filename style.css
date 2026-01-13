@@ -35,16 +35,18 @@ body {
   padding-top: 40;
   border: 1px solid #3a3a3a;
   border-radius: 16px;
+  padding: 40px;
 }
 
 
 /* profile section */
 
-.profile{
-  text-align: center;  /* in-line element center */
+.profile {
+  text-align: center;
+  /* in-line element center */
 }
 
-.profile img{
+.profile img {
   height: 120px;
   width: 120px;
   border-radius: 50%;
@@ -59,7 +61,7 @@ body {
 
 }
 
-.profile p{
+.profile p {
   background-color: #1e1e1e;
   padding: 5px 15px;
   color: #FFBF00;
@@ -73,8 +75,8 @@ body {
 
 /* contact info */
 .contact {
-  margin-top : 30px;
-  border-top : 2px solid #3a3a3a;
+  margin-top: 30px;
+  border-top: 2px solid #3a3a3a;
   padding-top: 20px;
 }
 
@@ -90,6 +92,90 @@ body {
   text-decoration: none;
 }
 
-.email,.phone{
+.email,
+.phone {
   margin-top: 10px;
+}
+
+
+/* social media */
+.social {
+  margin-top: 30px;
+  border-top: 2px solid #3a3a3a;
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+.social img {
+  height: 24px;
+  width: 24px;
+  margin-left: 10px;
+  filter: grayscale(1) invert(0.7);
+  transition: filter 0.3s ease;
+}
+
+.social img:hover {
+  filter: grayscale(0) invert(1);
+
+}
+
+
+/* main content */
+/* navigation */
+
+.navigation {
+  border-bottom: 2px solid #3a3a3a;
+  margin-bottom: 20px;
+  padding-bottom: 20px   ;
+
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+
+.active,
+nav a:hover {
+  color: #FFBF00;
+}
+
+
+/* about me */
+.heading {
+  color: #e0e0e0;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.line {
+  width: 60px;
+  height: 5px;
+  background-color: #FFBF00;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.content {
+  color: #a0a0a0;
+  text-align: justify;
+}
+
+/* skills */
+
+.skills {
+  color: #e0e0e0;
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
