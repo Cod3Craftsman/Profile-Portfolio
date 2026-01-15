@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -27,12 +31,14 @@ body {
   border: 1px solid #3a3a3a;
   border-radius: 16px;
   padding: 40px;
+  position: sticky;
+  top: 40px;
+  
 }
 
 .main-content {
-  height: 90vh;
   background-color: #2a2a2a;
-  padding-top: 40;
+  padding-top: 20px;
   border: 1px solid #3a3a3a;
   border-radius: 16px;
   padding: 40px;
@@ -60,6 +66,15 @@ body {
   color: #e8e8e8;
 
 }
+
+
+.about,
+.skills,
+.education,
+#portfolio {
+  scroll-margin-top: 90px;
+}
+
 
 .profile p {
   background-color: #1e1e1e;
@@ -104,6 +119,7 @@ body {
   border-top: 2px solid #3a3a3a;
   padding-top: 20px;
   text-align: center;
+  cursor: pointer;
 }
 
 
@@ -126,15 +142,21 @@ body {
 
 .navigation {
   border-bottom: 2px solid #3a3a3a;
-  margin-bottom: 20px;
-  padding-bottom: 20px   ;
-
+  /* margin-bottom: 20px; */
+  padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #2a2a2a;
+  height: 70px;
 }
 
 nav {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
+  height: 100%;
+  align-items: center;
 }
 
 nav a {
@@ -171,11 +193,219 @@ nav a:hover {
   text-align: justify;
 }
 
-/* skills */
+.about {
+  margin-bottom: 40px;
+}
 
-.skills {
+/* skills section */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 30px;
+}
+
+.item {
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #3a3a3a;
+  background-color: #1e1e1e;
+  text-align: center;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.item:hover {
+  transform: scale(1.05);
+  transform: rotateZ(24deg);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Education section */
+.education {
+  margin-top: 30px;
+
+}
+
+.edtech {
+  position: relative;
+  margin-top: 20px;
+}
+
+.year {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.degree {
   color: #e0e0e0;
-  font-size: 2rem;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+
+.college {
+  font-style: italic;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #a0a0a0;
+}
+
+.edfirst,
+.edsecond {
+  margin-bottom: 30px;
+  padding-left: 25px;
+  position: relative;
+
+}
+
+
+
+.circle {
+  z-index: 5;
+  height: 15px;
+  width: 15px;
+  border: 3px solid #FFBF00;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+}
+
+
+.liner {
+  position: absolute;
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  border: 2px solid #3a3a3a;
+}
+
+
+/* Portfolio section */
+.project-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.project {
+  background-color: #1e1e1e;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  padding: 20px;
+}
+
+.project img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #a0a0a0;
+  line-height: 1.6;
   margin-bottom: 15px;
+}
+
+.card span {
+  color: #FFBF00;
+  background-color: rgba(255, 191, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0.75rem;
+  margin-right: 5px;
+  padding: 4px 8px;
+}
+
+@media screen and (max-width:1200px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: 20px;
+  }
+
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* footer section  */
+.footer {
+  margin-top: 60px;
+  padding: 25px 0;
+  text-align: center;
+  border-top: 2px solid #3a3a3a;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #FFBF00;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
 }
